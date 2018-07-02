@@ -1,0 +1,162 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" (click)="showHome()">The Flighter</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" type="button" class="btn btn-primary" style="color: black;" data-toggle="modal" data-target="#exampleModal">Sign In</a>
+          <a class="nav-link js-scroll-trigger" type="button" class="btn btn-primary" style="color: black;" (click)="showDestination()">Your Destinations</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signin">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="emailSignin" aria-describedby="emailHelp" placeholder="Enter email">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="passwordSignin" placeholder="Password">
+          </div>
+          <!-- <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input">
+              Check me out
+            </label>
+          </div> -->
+          <button type="submit" class="btn btn-primary" id="signinlogin">Sign in</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="header-content">
+    <div class="header-content-inner" *ngIf="signup==0">
+      <h1 id="homeHeading">Tracking the price drops for your future flights</h1>
+      <hr>
+      <!-- <p>Just tell us where you want to fly and we'll email you whenever we see a price drop for that destination.</p> -->
+      <p>Tell us where you want to fly --> We check for price drops every day --> we email you when we find one.</p>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" (click)="showSignup()">Sign up</a>
+    </div>
+    <div class="header-content-inner" *ngIf="signup==2">
+      <form method="post" id="destination">
+        <div class="col-lg-12">
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="exampleInputEmail1" name="fname">Destination</label>
+            <input type="text" class="form-control" id="destination1" aria-describedby="firstname" name="destination1" placeholder="City">
+
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="inbounddate1" >Inbound Date</label>
+            <input type="date" class="form-control" id="inbounddate1" aria-describedby="lastname" name="inbounddate1" placeholder="Date">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="email" name="outbounddate1">Outbound Date</label>
+            <input type="date" class="form-control" id="outbounddate1" name="outbounddate1" aria-describedby="emailHelp" placeholder="Enter email">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="exampleInputEmail1" name="fname">Destination</label>
+            <input type="text" class="form-control" id="destination2" aria-describedby="firstname" name="destination1" placeholder="City">
+
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="inbounddate2" >Inbound Date</label>
+            <input type="date" class="form-control" id="inbounddate2" aria-describedby="lastname" name="inbounddate1" placeholder="Date">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="email" name="outbounddate2">Outbound Date</label>
+            <input type="date" class="form-control" id="outbounddate2" name="outbounddate2" aria-describedby="emailHelp" placeholder="Enter email">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="exampleInputEmail1" name="fname">Destination</label>
+            <input type="text" class="form-control" id="destination3" aria-describedby="firstname" name="destination1" placeholder="City">
+
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="inbounddate3" >Inbound Date</label>
+            <input type="date" class="form-control" id="inbounddate3" aria-describedby="lastname" name="inbounddate1" placeholder="Date">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group col-lg-3" style="display: inline-block;">
+            <label for="email" name="outbounddate3">Outbound Date</label>
+            <input type="date" class="form-control" id="outbounddate3" name="outbounddate3" aria-describedby="emailHelp" placeholder="Enter email">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <button type="submit" class="btn btn-primary col-lg-12" value="submit" id="submit3">Submit</button>
+        </div>
+
+
+      </form>
+    </div>
+    <div class="header-content-inner" *ngIf="signup==1">
+      <!-- <div id="registerSuccess" style="background-color: green; color: white;">
+        <p>Success! You are now Registered.</p>
+      </div> -->
+      <form method="post" id="register">
+        <div class="form-group">
+          <label for="exampleInputEmail1" name="fname">First Name</label>
+          <input type="text" class="form-control" id="firstName" aria-describedby="firstname" name="fname" placeholder="Your First Name">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="lastname" >Last Name</label>
+          <input type="text" class="form-control" id="lastname" aria-describedby="lastname" name="lname" placeholder="Your Last Name">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="email" name="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1" name="pword">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="pword" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Home City</label>
+          <input type="text" class="form-control" id="homecity" aria-describedby="lastname" name="home" placeholder="The city you want to fly from">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" value="submit" id="submit">Submit</button>
+
+      </form>
+
+    </div>
+  </div>
+
+</header>

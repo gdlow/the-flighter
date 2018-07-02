@@ -1,0 +1,7 @@
+Flask==0.12.1
+Flask-API==1.0
+Flask-Cors==3.0.2
+Flask-SQLAlchemy==2.2
+requests==2.4.3
+jsonschema==2.6.0
+psycopg2==2.7.3.1
